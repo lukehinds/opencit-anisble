@@ -1,0 +1,65 @@
+- name: install openssh
+  become: yes
+  package:
+    name: openssh
+    state: latest
+
+- name: install ant
+  become: yes
+  package:
+    name: ant
+    state: latest
+
+- name: install git
+  become: yes
+  package:
+    name: git
+    state: latest
+
+- name: install make
+  become: yes
+  package:
+    name: make
+    state: latest
+
+- name: install gcc
+  become: yes
+  package:
+    name: gcc
+    state: latest
+
+- name: install gcc-c++
+  become: yes
+  package:
+    name: gcc-c++
+    state: latest
+
+- name: install openssl
+  become: yes
+  package:
+    name: openssl
+    state: latest
+
+- name: install openssl-devel
+  become: yes
+  package:
+    name: openssl-devel
+    state: latest
+
+- name: install unzip
+  become: yes
+  package:
+    name: unzip
+    state: latest
+
+- name: install patch
+  become: yes
+  package:
+    name: patch
+    state: latest
+
+- name: install openjdk-8
+  become: yes
+  package:
+    name: java-1.8.0-openjdk-devel
+    state: latest
