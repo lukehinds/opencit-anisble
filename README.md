@@ -1,25 +1,21 @@
 # WARNING ! WIP DO NOT USE!
 
-OpenStack Ansible Hardening
-=========================
+OpenCIT Anisble
+===============
 
-Ansible role to perform OpenStack service hardening, based on the OpenStack security guide.
+Ansible role to deploy opencit.
 
 Role Variables
 --------------
 
-Roles specific to a release can be performed with a tag.
-
-For example `ansible-playbook playbook.yaml --tags newton`
-
 Example Playbook
 ----------------
 
-    - name: OpenStack Ansible Hardening
+    - name: OpenCIT Ansible
       hosts: all
       become: yes
       roles:
-        - openstack-ansible-hardening
+        - opencit-anisble
 
 License
 -------
