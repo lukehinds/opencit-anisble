@@ -2,118 +2,119 @@
   become: yes
   git:
     repo: https://github.com/opencit/opencit-external-artifacts
-    dest: /root
+    dest: /root/opencit-external-artifacts
     version: master
 
 - name: Clone opencit-contrib
   become: yes
   git:
     repo: https://github.com/opencit/opencit-contrib
-    dest: /root
+    dest: /root/opencit-contrib
     version: master
 
 - name: Clone opencit-util
   become: yes
   git:
     repo: https://github.com/opencit/opencit-util
-    dest: /root
+    dest: /root/opencit-util
     version: master
 
 - name: Clone opencit-privacyca
   become: yes
   git:
     repo: https://github.com/opencit/opencit-privacyca
-    dest: /root
+    dest: /root/opencit-privacyca
     version: master
 
 - name: Clone opencit-tboot-xm
   become: yes
   git:
     repo: https://github.com/opencit/opencit-tboot-xm
-    dest: /root
+    dest: /root/opencit-tboot-xm
     version: master
 
 - name: Clone opencit-trustagent
   become: yes
   git:
     repo: https://github.com/opencit/opencit-trustagent
-    dest: /root
+    dest: /root/opencit-trustagent
     version: master
 
 - name: Clone opencit
   become: yes
   git:
     repo: https://github.com/opencit/opencit
-    dest: /root
+    dest: /root/opencit
     version: master
 
 - name: Clone opencit-vrtm
   become: yes
   git:
     repo: https://github.com/opencit/opencit-vrtm
-    dest: /root
+    dest: /root/opencit-vrtm
     version: master
 
 - name: Clone opencit-policyagent
   become: yes
   git:
     repo: https://github.com/opencit/opencit-policyagent
-    dest: /root
+    dest: /root/opencit-policyagent
     version: master
 
 - name: Clone opencit-docker-proxy
   become: yes
   git:
     repo: https://github.com/opencit/opencit-docker-proxy
-    dest: /root
+    dest: /root/opencit-docker-proxy
     version: master
 
 - name: Clone opencit-kms
   become: yes
   git:
     repo: https://github.com/opencit/opencit-kms
-    dest: /root
+    dest: /root/opencit-kms
     version: master
 
 - name: Clone opencit-director
   become: yes
   git:
     repo: https://github.com/opencit/opencit-director
-    dest: /root
+    dest: /root/opencit-director
     version: master
 
 - name: Clone opencit-openstack-extensions
   become: yes
   git:
     repo: https://github.com/opencit/opencit-openstack-extensions
-    dest: /root
+    dest: /root/opencit-openstack-extensions
+  become: yes
     version: master
 
 - name: Clone opencit-openstack-controller-extensions
   become: yes
   git:
     repo: https://github.com/opencit/opencit-openstack-controller-extensions
-    dest: /root
+    dest: /root/opencit-openstack-controller-extensions
     version: master
 
 - name: Clone opencit-attestation-cache-hub
   become: yes
   git:
     repo: https://github.com/opencit/opencit-attestation-cache-hub
-    dest: /root
+    dest: /root/opencit-attestation-cache-hub
     version: master
 
 - name: Clone opencit-quickstart
   become: yes
   git:
     repo: https://github.com/opencit/opencit-quickstart
-    dest: /root
+    dest: /root/opencit-quickstart
     version: master
 
 - name: Clone opencit-tpm-tools-windows
   become: yes
   git:
     repo: https://github.com/opencit/opencit-tpm-tools-windows
-    dest: /root
+    dest: /root/opencit-tpm-tools-windows
     version: master
 
