@@ -1,0 +1,5 @@
+h--
+- hosts: all
+sudo: yes
+roles:
+    - { role: "opencit-ansible", opencit-ansible_version: "0.0.1" }

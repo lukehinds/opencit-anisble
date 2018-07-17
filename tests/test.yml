@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - geerlingguy.repo-epel
+    - opencit-ansible

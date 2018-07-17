@@ -1,0 +1,12 @@
+---
+# tasks file for openstack-security-hardening
+- include: packages.yml
+#- include: dashboard.yml
+#- include: compute.yml
+#- include: block-storage.yml
+#- include: image-storage.yml
+#- include: networking.yml
+#- include: object-storage.yml
+#- include: message-queuing.yml
+#- include: data-processing.yml
+#- include: databases.yml

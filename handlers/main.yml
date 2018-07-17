@@ -1,0 +1,6 @@
+---
+# handlers file for openstack-security-hardening
+#- name: restart apache
+#  command: service https restart
+#  args:
+#    warn: no
