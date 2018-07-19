@@ -1,5 +1,3 @@
-# WARNING ! WIP DO NOT USE!
-
 OpenCIT Anisble
 ===============
 
@@ -8,14 +6,20 @@ Ansible role to deploy opencit.
 Role Variables
 --------------
 
+tecris.maven
+    maven_major: 3
+    maven_version: 3.5.4
+    maven_home_parent_directory: /opt
+
 Example Playbook
 ----------------
-
-    - name: OpenCIT Ansible
-      hosts: all
-      become: yes
+    ---
+    - hosts: all
+      remote_user: root
       roles:
-        - opencit-anisble
+        - geerlingguy.repo-epel
+        - { role: tecris.maven, maven_major: 3, maven_version: 3.5.4, maven_home_parent_directory: /opt, become: yes }
+        - openci
 
 License
 -------
@@ -26,4 +30,3 @@ Author Information
 ------------------
 
 Luke Hinds (lhinds@redhat.com)
-# opencit-anisble
