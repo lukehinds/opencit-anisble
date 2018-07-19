@@ -3,10 +3,13 @@ OpenCIT Anisble
 
 Ansible role to deploy opencit.
 
+Roles to deploy needed packages, clone relevant repos and perform ant / maven
+build and finally install OpenCIT.
+
 Role Variables
 --------------
 
-tecris.maven
+    tecris.maven
     maven_major: 3
     maven_version: 3.5.4
     maven_home_parent_directory: /opt
