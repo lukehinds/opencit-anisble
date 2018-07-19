@@ -2,3 +2,4 @@
 # tasks file for opencit-ansible
 - include: packages.yml
 - include: git-repos.yml
+- include: get-files.yml
