@@ -19,9 +19,9 @@
     dest: /root/opencit-external-artifacts/vijava
     remote_src: yes
 
-- name: Move vijava55b20130927.zip to vijava-5.5.jar
+- name: Move vijava55b20130927.jar to vijava-5.5.jar
   become: yes
-  command: mv /root/opencit-external-artifacts/vijava55b20130927.zip /root/opencit-external-artifacts/vijava-5.5.jar
+  command: mv /root/opencit-external-artifacts/vijava/vijava55b20130927.jar /root/opencit-external-artifacts/vijava/vijava-5.5.jar
 
 - name: Download kmip4j to opencit-external-artifacts
   become: yes
@@ -32,7 +32,7 @@
 
 - name: Move kmip4j.jar kmip4j-1.0.jar
   become: yes
-  command: mv /root/opencit-external-artifacts/kmip4j.jar /root/opencit-external-artifacts/kmip4j-1.0.jar
+  command: mv /root/opencit-external-artifacts/kmip4j/jar/kmip4j.jar /root/opencit-external-artifacts/kmip4j/kmip4j-1.0.jar
 
 - name: Download ext2fsd to opencit-external-artifacts
   become: yes
@@ -49,9 +49,9 @@
 - name: Download Java SE Runtime Environment 8u181 to opencit-external-artifacts
   become: yes
   get_url:
-    url: http://download.oracle.com/otn-pub/java/jdk/8u181-b13/jre-8u181-windows-x64.tar.gz
+    url: "{{ jre_url }}"
+    headers: 'Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'
     dest: /root/opencit-external-artifacts/jre-windows/jre-1.8-windows-x64.tar.gz
-    headers: 'Cookie: oraclelicense=accept-securebackup-cookie'
 
 - name: Clean up old zip files
   become: yes
