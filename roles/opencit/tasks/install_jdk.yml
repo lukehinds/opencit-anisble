@@ -1,0 +1,49 @@
+- name: Download Java SE Runtime Environment 8u181 to opencit-external-artifacts
+  become: yes
+  get_url:
+    url: "http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz"
+    headers: 'Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'
+    dest: /root/jdk-8u181-linux-x64.tar.gz
+    timeout: 1000
+
+- name:  Create JVM directory
+  become: yes
+  file:
+    path: /usr/lib/jvm
+    state: directory
+
+- name: Extract Java SE Runtime Environment
+  become: yes
+  unarchive:
+    src: /root/jdk-8u181-linux-x64.tar.gz
+    dest: /usr/lib/jvm/
+    remote_src: yes
+
+- name: Set alternative java
+  become: yes
+  file:
+    src: /usr/lib/jvm/jdk1.8.0_181/bin/java
+    dest: /etc/alternatives/java
+    state: link
+
+- name: Set alternative javac
+  become: yes
+  file:
+    src: /usr/lib/jvm/jdk1.8.0_181/bin/javac
+    dest: /etc/alternatives/javac
+    state: link
+
+- name: Set alternative java /usr/bin
+  become: yes
+  file:
+    src: /usr/lib/jvm/jdk1.8.0_181/bin/java
+    dest: /usr/bin/java
+    state: link
+
+- name: Set alternative javac /usr/bin
+  become: yes
+  file:
+    src: /usr/lib/jvm/jdk1.8.0_181/bin/javac
+    dest: /usr/bin/java
+    state: link
+

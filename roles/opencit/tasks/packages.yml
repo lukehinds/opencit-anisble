@@ -58,8 +58,14 @@
     name: patch
     state: latest
 
-- name: install openjdk-8
+- name: install makeself
   become: yes
   package:
-    name: java-1.8.0-openjdk-devel
+    name: makeself
+    state: latest
+
+- name: install nsis
+  become: yes
+  package:
+    name: nsis
     state: latest

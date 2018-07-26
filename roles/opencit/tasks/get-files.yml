@@ -52,6 +52,7 @@
     url: "{{ jre_url }}"
     headers: 'Cookie:gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie'
     dest: /root/opencit-external-artifacts/jre-windows/jre-1.8-windows-x64.tar.gz
+    timeout: 1000
 
 - name: Clean up old zip files
   become: yes

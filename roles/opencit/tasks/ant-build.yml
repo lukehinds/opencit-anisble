@@ -1,0 +1,102 @@
+- NAME: Build opencit-external-artifacts
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-external-artifacts
+
+- name: Build opencit-contrib
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-contrib
+
+- name: Build opencit-util
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-util
+
+- name: Build opencit-privacyca
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-privacyca
+
+- name: Build opencit-tboot-xm
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-tboot-xm
+
+- name: Build opencit-trustagent
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-trustagent
+
+- name: Build opencit
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit
+
+- name: Build opencit-vrtm
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-vrtm
+
+- name: Build opencit-policyagent
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-policyagent
+
+- name: Build opencit-docker-proxy
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-docker-proxy
+
+- name: Build opencit-kms
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-kms
+
+- name: Build opencit-director
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-director
+
+- name: Build opencit-openstack-extensions
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-openstack-extensions
+
+- name: Build opencit-openstack-controller-extensions
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-openstack-controller-extensions
+
+- name: Build opencit-attestation-cache-hub
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-attestation-cache-hub
+
+- name: Build opencit-quickstart
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-quickstart
+
+- name: Build opencit-tpm-tools-windows
+  become: yes
+  command: ant
+  args:
+    chdir: /root/opencit-tpm-tools-windows
+

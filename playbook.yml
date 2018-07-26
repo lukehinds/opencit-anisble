@@ -1,7 +1,14 @@
 ---
 - hosts: all
   remote_user: root
+  environment:
+     JAVA_HOME: /usr/lib/jvm/jdk1.8.0_181
+     MAVEN_HOME: /usr/local/apache-maven-3.3.9
+     M2: /usr/local/apache-maven-3.3.9/bin
+     MAVEN_OPTS: "-Xmx1024m -XX:MaxPermSize=1024m"
+     PATH: "{{ ansible_env.PATH }}:/usr/local/apache-maven-3.3.9/bin:/usr/lib/jvm/jdk1.8.0_181"
+
   roles:
     - geerlingguy.repo-epel
-    - { role: tecris.maven, maven_major: 3, maven_version: 3.5.4, maven_home_parent_directory: /opt, become: yes }
+    - { role: tecris.maven, maven_major: 3, maven_version: 3.3.9, maven_home_parent_directory: /usr/local, become: yes }
     - opencit

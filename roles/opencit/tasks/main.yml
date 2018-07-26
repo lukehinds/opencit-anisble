@@ -1,5 +1,7 @@
 ---
 # tasks file for opencit-ansible
 - include: packages.yml
+- include: install_jdk.yml
 - include: git-repos.yml
 - include: get-files.yml
+- include: ant-build.yml
