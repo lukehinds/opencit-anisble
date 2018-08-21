@@ -93,10 +93,3 @@
   command: ant
   args:
     chdir: /root/opencit-quickstart
-
-- name: Build opencit-tpm-tools-windows
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-tpm-tools-windows
-
