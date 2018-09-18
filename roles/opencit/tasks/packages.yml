@@ -69,3 +69,15 @@
   package:
     name: nsis
     state: latest
+
+- name: install postgresql
+  become: yes
+  package:
+    name: postgresql
+    state: latest
+
+- name: install postgresql-server
+  become: yes
+  package:
+    name: postgresql-server
+    state: latest

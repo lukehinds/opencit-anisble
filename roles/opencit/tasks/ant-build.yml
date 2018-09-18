@@ -1,95 +1,152 @@
-- NAME: Build opencit-external-artifacts
+- name: Edit cit.sh file
   become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-external-artifacts
+  template:
+    src: cit.sh.j2
+    dest: /root/opencit-quickstart/packages/cit-quickstart/src/main/application/bin/cit.sh
 
-- name: Build opencit-contrib
+- name: Update pom.xml for opencit-trustagent
   become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-contrib
+  template:
+    src: pom_trustagent.xml.j2
+    dest: /root/opencit-trustagent/features/mtwilson-trustagent-client-jaxrs2/pom.xml
 
-- name: Build opencit-util
+- name: Update pom.xml for opencit-trustagent
   become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-util
+  template:
+    src: pom_opencit.xml.j2
+    dest: /root/opencit/integration/mtwilson-client-java7/pom.xml
 
-- name: Build opencit-privacyca
+- name: Update installer functions
   become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-privacyca
+  template:
+    src: functions_util.sh
+    dest: /root/opencit-util/features-linux/mtwilson-core-linux-functions/src/main/script/functions.sh
 
-- name: Build opencit-tboot-xm
+- name: Update installer setup script
   become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-tboot-xm
-
-- name: Build opencit-trustagent
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-trustagent
+  template:
+    src: setup.sh
+    dest: /root/opencit/installers/mtwilson-portal-installer/src/files/setup.sh
 
 - name: Build opencit
   become: yes
-  command: ant
+  shell: ant > build.out
   args:
-    chdir: /root/opencit
+    chdir: "{{item}}"
+  environment:
+    JAVA_HOME: /usr/lib/jvm/jdk{{ download.jdk_version }}
+    MAVEN_HOME: /usr/local/apache-maven-{{ download.maven_version }}
+    PATH: /usr/lib/jvm/jdk{{ download.jdk_version }}/bin:/usr/local/apache-maven-{{ download.maven_version }}/bin:{{ansible_env.PATH}}
+  with_items:
+   - /root/opencit-external-artifacts/
+   - /root/opencit-contrib
+   - /root/opencit-util
+   - /root/opencit-privacyca
+   - /root/opencit-tboot-xm
+   - /root/opencit-trustagent
+   - /root/opencit
+   - /root/opencit-vrtm
+   - /root/opencit-policyagent
+   - /root/opencit-docker-proxy
+   - /root/opencit-kms
+   - /root/opencit-director
+   - /root/opencit-openstack-extensions
+   - /root/opencit-openstack-controller-extensions
+   - /root/opencit-attestation-cache-hub
+   - /root/opencit-quickstart
 
-- name: Build opencit-vrtm
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-vrtm
+#- NAME: Build opencit-external-artifacts
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-external-artifacts
 
-- name: Build opencit-policyagent
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-policyagent
+#- name: Build opencit-contrib
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-contrib
 
-- name: Build opencit-docker-proxy
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-docker-proxy
+#- name: Build opencit-util
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-util
 
-- name: Build opencit-kms
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-kms
+#- name: Build opencit-privacyca
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-privacyca
 
-- name: Build opencit-director
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-director
+#- name: Build opencit-tboot-xm
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-tboot-xm
 
-- name: Build opencit-openstack-extensions
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-openstack-extensions
+#- name: Build opencit-trustagent
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-trustagent
 
-- name: Build opencit-openstack-controller-extensions
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-openstack-controller-extensions
+#- name: Build opencit
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit
 
-- name: Build opencit-attestation-cache-hub
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-attestation-cache-hub
+#- name: Build opencit-vrtm
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-vrtm
 
-- name: Build opencit-quickstart
-  become: yes
-  command: ant
-  args:
-    chdir: /root/opencit-quickstart
+#- name: Build opencit-policyagent
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-policyagent
+
+#- name: Build opencit-docker-proxy
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-docker-proxy
+
+#- name: Build opencit-kms
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-kms
+
+#- name: Build opencit-director
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-director
+
+#- name: Build opencit-openstack-extensions
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-openstack-extensions
+
+#- name: Build opencit-openstack-controller-extensions
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-openstack-controller-extensions
+
+#- name: Build opencit-attestation-cache-hub
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-attestation-cache-hub
+
+#- name: Build opencit-quickstart
+  #become: yes
+  #command: ant
+  #args:
+    #chdir: /root/opencit-quickstart

@@ -1,3 +1,5 @@
 ---
 # vars file for openstack-security-hardening
 jre_url: http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jre-8u181-windows-x64.tar.gz
+
+command: "sudo -u $CIT_USERNAME -H -E $CIT_BIN/cit.sh $*"
